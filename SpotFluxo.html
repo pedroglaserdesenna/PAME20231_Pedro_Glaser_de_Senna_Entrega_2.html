@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotFluxo</title>
+    <style>
+
+        /* plano de fundo da fluxo: */
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            justify-content: center;
+            background-image: url("imagens/Foto_Fluxo.jpg");
+        }
+
+        /* tela inteira com gradiente */
+        #fundo {
+            height: 100vh;
+            width: 100vw;
+            background-image: linear-gradient(to bottom, transparent, black 100%),
+            linear-gradient(to top, transparent, black 100%);
+            align-items: center;
+        }
+
+        /* barra do topo */
+        #barra {
+            display: flex;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 160px;
+            width: 100vw;
+            align-items: center;
+        }
+
+        /* area de login */
+        #central {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            background-color: black;
+            height: 1200px;
+            width: 1000px;
+        }
+
+        #spotfluxologo {
+            margin: 15px;
+            filter: invert(100%);
+        }
+
+        #titulo {
+            font-size: 500%;
+            color: white;
+        }
+
+        #subtitulo {
+            font-size: 500%;
+            color: white;
+        }
+
+        .botoes {
+            background-color: black;
+            border: white, 10px;
+            color: white;
+        }
+
+        .formulario {
+            background-color: darkgrey;
+            color: white;
+        }
+
+    </style>
+</head>
+<body> <!-- foto da fluxo -->
+    <div id = fundo> <!-- tela inteira com gradiente -->
+        <div id = barra> <!-- barra do topo-->
+            <div id = 'spotfluxologo'>
+                <img src = "imagens/Spotify-Icon.png" height = "130vh" width = "130vw">
+            </div>
+            <div>
+                <h1 id = 'titulo'> SpotFluxo™ </h1>
+            </div>
+        </div>
+        <div id = "central"> <!-- area de login -->
+            
+            <h2 id = 'subtitulo'> Entrar no SpotFluxo </h2>
+            
+            <button class = 'botoes'>
+                <img src = "imagens/Google-Icon.png" height = "80px" width = "80px">
+                Entrar pelo Google
+            </button>
+
+            <button class = 'botoes'>
+                <img src = "imagens/Facebook-Icon.png" height = "80px" width = "80px">
+                Entrar pelo Facebook
+            </button>
+
+            <button class = 'botoes'>
+                <img src = "imagens/Apple-Icon.png" height = "80px" width = "80px">
+                Entrar pela Apple
+            </button>
+
+            <button class = 'botoes'>
+                Entrar pelo telefone
+            </button>
+
+            <input class = 'formulario' type = "name" name = "nome" placeholder = "Digite seu nome">
+
+            <input class = 'formulario' type = "password" name = "senha" placeholder = "Digite sua senha">
+   
+            <input class = 'formulario' type = "checkbox" name = "logado" placeholder = "Manter logado?">
+
+        </div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
