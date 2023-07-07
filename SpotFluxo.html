@@ -13,6 +13,7 @@
             background-size: cover;
             justify-content: center;
             background-image: url("imagens/Foto_Fluxo.jpg");
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         /* tela inteira com gradiente */
@@ -22,6 +23,7 @@
             background-image: linear-gradient(to bottom, transparent, black 100%),
             linear-gradient(to top, transparent, black 100%);
             align-items: center;
+            justify-content: center;
         }
 
         /* barra do topo */
@@ -38,11 +40,12 @@
 
         /* area de login */
         #central {
-            position: absolute;
+            border-radius: 20px;
+            position: fixed;
             top: 25%;
-            left: 25%;
-            background-color: black;
-            height: 1200px;
+            left: 35%;
+            background-color: rgb(9, 9, 9);
+            height: 1400px;
             width: 1000px;
         }
 
@@ -52,71 +55,276 @@
         }
 
         #titulo {
-            font-size: 500%;
+            font-size: 450%;
             color: white;
         }
 
         #subtitulo {
+            margin-left: 10%;
             font-size: 500%;
             color: white;
         }
 
         .botoes {
-            background-color: black;
-            border: white, 10px;
+            display: flex;
+            align-items: center;
+            height: 80px;
+            width: 600px;
+            margin-left: 18%;
+            margin-top: 1%;
+            margin-bottom: 1%;
+            background-color: rgb(9, 9, 9);
             color: white;
+            border: grey solid 1px;
+            border-radius: 40px;
         }
 
-        .formulario {
-            background-color: darkgrey;
+        .imagens_botoes {
+            margin: 2%;
+        }
+
+        .texto_botoes {
+            margin-left: 16%;
+            font-size: 220%
+        }
+
+        #formulario {
+            margin-left: 8%;
+            margin-top: 5%;
+            height: 620px;
+            width: 800px;
+            border-top: grey solid 1px;
+            border-bottom: grey solid 1px;
+        }
+
+        .formulario_itens {
             color: white;
+            margin-top: -3%;
+            margin-left: 12%;
+            height: 80px;
+            width: 600px;
+            font-size: 200%;
+            border: grey solid 1px;
+            border-radius: 10px;
+            background-color: rgb(20, 20, 20);
+        }
+
+        .label {
+            margin-left: 12%;
+            color: white;
+            font-size: 150%;
+        }
+
+        #olho {
+            top: 61.5%;
+            position: absolute;
+            margin-left: -8%;
+            height: 50px;
+            width: 50px;
+            opacity: 100;
+        }
+
+        #lembrar_de_mim {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #on_off {
+            position: relative;
+            width: 60px;
+            height: 34px;
+        }
+
+        #on_off input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        #switch {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: grey;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        #switch::before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: rgb(9, 9, 9);
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + #switch {
+            background-color: rgb(72, 207, 72);
+        }
+
+        input:checked + #switch:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        #login {
+            display: flex;
+            margin-top: 5%;
+            margin-left: 13%;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            width: 600px;
+            background-color: rgb(72, 207, 72);
+            color: black;
+            border: rgb(72, 207, 72) solid 1px;
+            border-radius: 40px;
+            font-size: 160%;
+        }
+
+        #esqueceu_senha {
+            color: white;
+            font-size: 160%;
+            margin-left: 35%;
+            margin-top: 4%;
+        }
+
+        #registrar {
+            color: white;
+            font-size: 160%;
+            margin-left: 18%;
+            margin-top: 6%;
         }
 
     </style>
 </head>
 <body> <!-- foto da fluxo -->
-    <div id = fundo> <!-- tela inteira com gradiente -->
-        <div id = barra> <!-- barra do topo-->
-            <div id = 'spotfluxologo'>
+    <div id = "fundo"> <!-- tela inteira com gradiente -->
+
+        <div id = "barra"> <!-- barra do topo-->
+
+            <div id = "spotfluxologo">
                 <img src = "imagens/Spotify-Icon.png" height = "130vh" width = "130vw">
             </div>
+
             <div>
-                <h1 id = 'titulo'> SpotFluxo™ </h1>
+                <h1 id = "titulo">
+                    SpotFluxo™
+                </h1>
             </div>
+
         </div>
+
         <div id = "central"> <!-- area de login -->
             
-            <h2 id = 'subtitulo'> Entrar no SpotFluxo </h2>
-            
-            <button class = 'botoes'>
-                <img src = "imagens/Google-Icon.png" height = "80px" width = "80px">
-                Entrar pelo Google
-            </button>
+            <div id = "contas">
+                <h2 id = "subtitulo">
+                    Entrar no SpotFluxo
+                </h2>
+                
+                <button class = "botoes">
+                    <img class = "imagens_botoes" src = "imagens/Google-Icon.png" height = "50px" width = "50px">
+                    <h3 class = "texto_botoes"> Entrar pelo Google </h3>
+                </button>
 
-            <button class = 'botoes'>
-                <img src = "imagens/Facebook-Icon.png" height = "80px" width = "80px">
-                Entrar pelo Facebook
-            </button>
+                <button class = "botoes">
+                    <img class = "imagens_botoes" src = "imagens/Facebook-Icon.png" height = "50px" width = "50px">
+                    <h3 class = "texto_botoes"> Entrar pelo Facebook </h3>
+                </button>
 
-            <button class = 'botoes'>
-                <img src = "imagens/Apple-Icon.png" height = "80px" width = "80px">
-                Entrar pela Apple
-            </button>
+                <button class = "botoes">
+                    <img class = "imagens_botoes" src = "imagens/Apple-Icon.png" height = "50px" width = "50px">
+                    <h3 class = "texto_botoes"> Entrar pela Apple </h3>
+                </button>
 
-            <button class = 'botoes'>
-                Entrar pelo telefone
-            </button>
+                <button class = "botoes">
+                    <h3 class = "texto_botoes"> Continuar utilizando telefone </h3>
+                </button>
+            </div>
 
-            <input class = 'formulario' type = "name" name = "nome" placeholder = "Digite seu nome">
+            <div id = "formulario"> 
 
-            <input class = 'formulario' type = "password" name = "senha" placeholder = "Digite sua senha">
-   
-            <input class = 'formulario' type = "checkbox" name = "logado" placeholder = "Manter logado?">
+                <form id = "formulario_completo">
+
+                    <h4 class = "label"> Nome: </h4>
+                    <input class = "formulario_itens" id = "nome" type = "name" placeholder = "Email ou nome de usuário">
+
+                    <h4 class = "label"> Senha: </h4>
+                    <input class = "formulario_itens" id = "senha" type = "password" placeholder = "Senha">
+                    <input id = "olho" type = "checkbox" onclick = "revelar()">
+
+                    <div id = "lembrar_de_mim">
+                        <label id = "on_off">
+                            <input type = "checkbox" id = "selecao">
+                            <span id = "switch"></span>
+                        </label>
+                        <h4 class = "label"> Lembrar de mim? </h4>
+                    </div>
+
+                    <button id = "login" type = "submit" form = "formulario_completo">
+                        Log in
+                    </button>
+                    
+                </form>
+
+                <div id = "esqueceu_senha">
+                    <u> Esqueceu sua senha? </u>
+                </div>
+
+            </div>
+
+            <div id = "registrar">
+                Não possui uma conta? <u> Inscrever-se no SpotFluxo</u>
+            </div>
 
         </div>
     </div>
+
     <script>
+        function revelar() {
+            var x = document.getElementById("senha");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        var informacoes = document.getElementById("formulario_completo")
         
+        informacoes.addEventListener("submit", function(evento) {
+            evento.preventDefault();
+            var nome = document.getElementById("nome").value;
+            var senha = document.getElementById("senha").value;
+            var lembrar = document.getElementById("selecao").checked;
+
+            if (nome === "" || senha === "") {
+                var erro = document.createElement("p");
+                erro.textContent = "Preencha todos os campos.";
+                erro.classList.add("mensagem_erro");
+                informacoes.appendChild(erro);
+            } else {
+                var sucesso = document.createElement("p");
+                sucesso.textContent = "Fomulário enviado com sucesso!";
+                sucesso.classList.add("mensagem_sucesso");
+                informacoes.appendChild(sucesso);
+
+                var userinfo = "Nome: "+nome+"\nSenha: "+senha+"\nLembrar: "+lembrar
+                alert(userinfo)
+            }
+        })
     </script>
+
 </body>
 </html>
